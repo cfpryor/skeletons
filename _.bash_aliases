@@ -1,10 +1,4 @@
 # Aliases
-alias er="cd ~/Desktop/Linqs/PSL/psl-er/er/groovy/src/main/java/org/linqs/psl/examples/er/"
-alias ere="cd ~/Desktop/Linqs/PSL/psl-er/er/groovy/"
-alias psl="cd ~/Desktop/Linqs/PSL/psl/"
-alias psldb="cd ~/Desktop/Linqs/PSL/psl/psl-core/src/main/java/org/linqs/psl/database/"
-alias util="cd ~/Desktop/Linqs/PSL/psl-utils-eriq/psl-utils/"
-
 alias vim="vim -O"
 
 # Functions
@@ -15,4 +9,14 @@ function findvim {
    fi
 
    vim $(find $target -name $1)
+}
+
+function mailf {
+   if [ $# -eq 1 ]; then
+		uuencode $1 $1 | mail ""
+	fi
+
+   if [ $# -eq 2 ]; then
+		uuencode $1 $1 | mail $2
+	fi
 }
